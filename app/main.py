@@ -1,13 +1,6 @@
 #!/usr/bin/python3
 
 from flask import Flask, render_template, request
-from timeloop import Timeloop as tl
-
-@tl.job(interval=timedelta(seconds=1))
-def checker():
-
-@tl.job(interval=timedelta(seconds=1))
-def function2():
 
 if __name__ == '__main__':
     
