@@ -1,11 +1,6 @@
 #!/usr/bin/python3
 
 from flask import Flask, render_template, request
-
-if __name__ == '__main__':
-    
-    tl.start(block=True)
-
 app = Flask(__name__, template_folder = 'template')
 
 def add(url):
