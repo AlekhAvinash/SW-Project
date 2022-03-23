@@ -85,16 +85,34 @@ class MainActivity : AppCompatActivity(), AddProductBottomSheetFragment.BottomSh
                 //var URL = "https://www.flipkart.com/google-pixel-4a-just-black-128-gb/p/itm023b9677aa45d?pid=MOBFUSBNAZGY7HQU&lid=LSTMOBFUSBNAZGY7HQUWHTF0C&marketplace=FLIPKART&q=google+pixel+4a&store=tyy%2F4io&srno=s_1_1&otracker=AS_QueryStore_OrganicAutoSuggest_1_6_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_6_na_na_na&fm=search-autosuggest&iid=87da2522-c27b-45e7-8c3c-8b8238412bc2.MOBFUSBNAZGY7HQU.SEARCH&ppt=hp&ppn=homepage&ssid=j0j3vbccc00000001647534271493&qH=680e649af610418f"
                 var doc = Jsoup.connect(URL.toString()).get()
 
-                var productTitle = doc.getElementsByClass("B_NuCI")
-                //println(productTitle.text())
+                var productTitle = doc.getElementsByClass("B_NuCI").text()
+                var pt: Array<String> = productTitle.split(" ").toTypedArray()
+                val p = pt.filter({pt.indexOf(it) < 6})
+                productTitle = p.joinToString(" ")
 
-                var productPrice = doc.getElementsByClass("_30jeq3 _16Jk6d")
-                //println(productPrice.text())
+                println(productTitle)
+
+                var productPrice = doc.getElementsByClass("_30jeq3 _16Jk6d").text()
+                var offerVal = doc.getElementsByClass("rd9nIL").text()
+
+                println(offerVal)
+
+                var offerAvail: String
+
+                if (offerVal == "Available offers"){
+                    offerAvail = "Offer Available"
+                }
+                else{
+                    offerAvail = "No Offers"
+                }
+            //println(productPrice.text())
 
                 val newProduct = CardData(
                     R.drawable.ic_android_phone,
-                    productTitle.text(), productPrice.text()
+                    productTitle, offerAvail ,productPrice
                 )
+
+
 
                 dummyList.add(0,newProduct)
                 adapter.notifyItemInserted(0)
