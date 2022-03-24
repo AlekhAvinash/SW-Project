@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:gravity="center_horizontal"
-    android:padding="16dp">
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/AddProduct_tileText"
@@ -39,29 +39,54 @@
         android:id="@+id/budget_textField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:endIconMode="clear_text"
-        app:startIconDrawable="@drawable/ic_insert_url"
-        android:hint="Enter Preferred Budget"
-        android:layout_marginTop="10dp"
         android:layout_below="@id/url_textField"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:hint="Enter Preferred Budget"
+        app:endIconMode="clear_text"
+        app:startIconDrawable="@drawable/ic_baseline_dollar">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/budget_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="1"
-            />
+            android:inputType="number"
+            android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/SpinnerHelpText"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/budget_textField"
+        android:text="Choose Track Duration"
+        android:textSize="20dp"
+        android:layout_marginStart="20dp"
+        android:padding="1dp"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/SpinnerHelpText"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/black"
+        android:entries="@array/duration_time"
+        />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/addItemButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/spinner2"
+        android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="10dp"
-        android:text="Add Item"
-        android:layout_below="@id/budget_textField"
-        android:layout_alignParentRight="true"/>
+        android:text="Add Item" />
 
 </RelativeLayout>
