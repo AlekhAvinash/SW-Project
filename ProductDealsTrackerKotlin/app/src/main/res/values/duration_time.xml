@@ -2,9 +2,9 @@
 <resources>
 
     <string-array name="duration_time">
-        <item><bold>One Day</bold></item>
-        <item><bold>One Week</bold></item>
-        <item><bold>One Month</bold></item>
+        <item><bold>Every Hour</bold></item>
+        <item><bold>Every Day</bold></item>
+        <item><bold>Every Week</bold></item>
     </string-array>
 
 
