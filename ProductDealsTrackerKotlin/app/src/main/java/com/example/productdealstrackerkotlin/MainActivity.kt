@@ -16,7 +16,7 @@ import org.jsoup.Jsoup
 class MainActivity : AppCompatActivity(), AddProductBottomSheetFragment.BottomSheetListener {
 
     private val dummyList = ArrayList<CardData>()
-    private val adapter = ProductListAdapter(dummyList)
+    private val adapter = ProductListAdapter(dummyList,this)
 
     lateinit var toggle : ActionBarDrawerToggle //variable for the 3line sign at Top-left corner
 
@@ -105,14 +105,13 @@ class MainActivity : AppCompatActivity(), AddProductBottomSheetFragment.BottomSh
                 else{
                     offerAvail = "No Offers"
                 }
-            //println(productPrice.text())
+
+            // TODO: Get the Image URL from Flipkart using Jsoup, Replace the output below
 
                 val newProduct = CardData(
-                    R.drawable.ic_android_phone,
-                    productTitle, offerAvail ,productPrice
+                    "https://rukminim2.flixcart.com/image/kk76wsw0/computer/h/j/o/lenovo-original-imafzhsyzryckmew.jpeg",
+                    productTitle, offerAvail,productPrice
                 )
-
-
 
                 dummyList.add(0,newProduct)
                 adapter.notifyItemInserted(0)

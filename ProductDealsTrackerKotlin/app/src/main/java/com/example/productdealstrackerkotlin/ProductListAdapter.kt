@@ -1,4 +1,5 @@
 package com.example.productdealstrackerkotlin
+import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
@@ -8,23 +9,26 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.cardview_layout.view.*
 import kotlin.random.Random
 
 
-class ProductListAdapter(private val productListArray : List<CardData>) : RecyclerView.Adapter<ProductListAdapter.ProductListViewHolder>() {
+class ProductListAdapter(private val productListArray : List<CardData>, private val context: Context) : RecyclerView.Adapter<ProductListAdapter.ProductListViewHolder>() {
 
     class ProductListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val imageView : ImageView = itemView.findViewById(R.id.card_image_view)
-        val productName : TextView = itemView.findViewById(R.id.card_text_line1)
-        val offerAvail : TextView = itemView.findViewById(R.id.card_text_line2)
-        val productPrice : TextView = itemView.findViewById(R.id.card_text_line3)
+
+        val imageView : ImageView = itemView.findViewById(R.id.productImage)
+        val productName : TextView = itemView.findViewById(R.id.productName)
+        val offerAvail : TextView = itemView.findViewById(R.id.offerAvailability)
+        val productPrice : TextView = itemView.findViewById(R.id.productPrice)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductListViewHolder {
 
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.cardview_layout,
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.card_layout_new,
             parent,false)
 
         return ProductListViewHolder(itemView)
@@ -49,10 +53,10 @@ class ProductListAdapter(private val productListArray : List<CardData>) : Recycl
 
 //        cardview.setBackgroundColor(Color.parseColor("#EAEDED"));
 
-        holder.imageView.setImageResource(currentItem.imageResource)
         holder.productName.text = currentItem.productName
         holder.offerAvail.text = currentItem.offerAvail
         holder.productPrice.text = currentItem.productPrice
+        Glide.with(this.context).load(currentItem.imageURL).into(holder.imageView);
 
     }
 
