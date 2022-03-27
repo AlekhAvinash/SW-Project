@@ -106,11 +106,11 @@ class MainActivity : AppCompatActivity(), AddProductBottomSheetFragment.BottomSh
                     offerAvail = "No Offers"
                 }
 
-            // TODO: Get the Image URL from Flipkart using Jsoup, Replace the output below
+                var imgURL = doc.getElementsByClass("_396cs4 _2amPTt _3qGmMb _3exPp9").attr("srcSet").substringBefore(" 2x").substringBefore("?q=70")
+                println(imgURL)
 
                 val newProduct = CardData(
-                    "https://rukminim2.flixcart.com/image/kk76wsw0/computer/h/j/o/lenovo-original-imafzhsyzryckmew.jpeg",
-                    productTitle, offerAvail,productPrice
+                    imgURL, productTitle, offerAvail,productPrice
                 )
 
                 dummyList.add(0,newProduct)
