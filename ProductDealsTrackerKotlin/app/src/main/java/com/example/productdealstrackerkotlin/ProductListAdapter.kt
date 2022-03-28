@@ -1,20 +1,18 @@
 package com.example.productdealstrackerkotlin
 import android.content.Context
-import android.graphics.Color
-import android.graphics.drawable.GradientDrawable
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.cardview_layout.view.*
-import kotlin.random.Random
 
 
-class ProductListAdapter(private val productListArray : List<CardData>, private val context: Context) : RecyclerView.Adapter<ProductListAdapter.ProductListViewHolder>() {
+class ProductListAdapter(private val productListArray : MutableList<CardData>, private val context: Context) : RecyclerView.Adapter<ProductListAdapter.ProductListViewHolder>() {
 
     class ProductListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -23,6 +21,8 @@ class ProductListAdapter(private val productListArray : List<CardData>, private 
         val productName : TextView = itemView.findViewById(R.id.productName)
         val offerAvail : TextView = itemView.findViewById(R.id.offerAvailability)
         val productPrice : TextView = itemView.findViewById(R.id.productPrice)
+        //val site: ImageView = itemView.findViewById(R.id.site)
+        val dlt: ImageView = itemView.findViewById(R.id.dlt)
 
     }
 
@@ -56,10 +56,24 @@ class ProductListAdapter(private val productListArray : List<CardData>, private 
         holder.productName.text = currentItem.productName
         holder.offerAvail.text = currentItem.offerAvail
         holder.productPrice.text = currentItem.productPrice
-        Glide.with(this.context).load(currentItem.imageURL).into(holder.imageView);
+        Glide.with(this.context).load(currentItem.imageURL).into(holder.imageView)
 
+        // For go to site
+        /*holder.site.setOnClickListener {
+            val uri = Uri.parse("http://www.google.com") // missing 'http://' will cause crashed
+
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            context.startActivity(intent)
+        }*/
+
+        holder.dlt.setOnClickListener{deleteItem(position)}
     }
 
+
+    private fun deleteItem(index: Int){
+        productListArray.removeAt(index)
+        notifyDataSetChanged()
+    }
     override fun getItemCount() = productListArray.size
 
 }

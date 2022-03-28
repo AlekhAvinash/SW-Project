@@ -77,6 +77,7 @@ class MainActivity : AppCompatActivity(), AddProductBottomSheetFragment.BottomSh
         return super.onOptionsItemSelected(item)
     }
 
+
     // Function To Scrape Product Details
     fun addProduct(URL: String){
 

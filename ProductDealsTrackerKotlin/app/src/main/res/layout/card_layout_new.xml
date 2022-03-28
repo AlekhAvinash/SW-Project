@@ -71,19 +71,21 @@
 
             <com.google.android.material.button.MaterialButton
                 style="?attr/borderlessButtonStyle"
+                android:id="@+id/site"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:text="Go to site" />
 
             <ImageView
+                android:id="@+id/dlt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="170dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="12dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:src="@drawable/ic_trash_can_icon" />
+                android:src="@drawable/ic_baseline_delete_24" />
 
             <ImageView
                 android:layout_width="wrap_content"
