@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity(), AddProductBottomSheetFragment.BottomSh
                 println(imgURL)
 
                 val newProduct = CardData(
-                    imgURL, productTitle, offerAvail,productPrice
+                    imgURL, productTitle, offerAvail,productPrice,URL
                 )
 
                 dummyList.add(0,newProduct)

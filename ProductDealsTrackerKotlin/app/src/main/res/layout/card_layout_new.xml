@@ -12,7 +12,7 @@
     app:cardElevation="2dp"
     android:clickable="true"
     android:focusable="true"
-    android:checkable="true">>
+    android:checkable="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -69,12 +69,13 @@
             android:layout_margin="8dp"
             android:orientation="horizontal">
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 style="?attr/borderlessButtonStyle"
-                android:id="@+id/site"
+                android:id="@+id/link"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
+                android:onClick=""
                 android:text="Go to site" />
 
             <ImageView
