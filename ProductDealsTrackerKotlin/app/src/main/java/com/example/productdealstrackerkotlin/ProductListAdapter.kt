@@ -82,7 +82,7 @@ class ProductListAdapter(private val productListArray : MutableList<CardData>, p
 
     private fun deleteItem(index: Int){
         productListArray.removeAt(index)
-        notifyDataSetChanged()
+        notifyItemRemoved(index)
     }
 
     override fun getItemCount() = productListArray.size
