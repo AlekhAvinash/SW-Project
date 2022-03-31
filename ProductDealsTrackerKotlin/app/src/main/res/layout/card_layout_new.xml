@@ -75,7 +75,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:onClick=""
                 android:text="Go to site" />
 
             <ImageView
@@ -89,6 +88,7 @@
                 android:src="@drawable/ic_baseline_delete_24" />
 
             <ImageView
+                android:id="@+id/share"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"

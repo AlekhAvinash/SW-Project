@@ -29,6 +29,7 @@ class ProductListAdapter(private val productListArray : MutableList<CardData>, p
         val productPrice : TextView = itemView.findViewById(R.id.productPrice)
         val link: Button = itemView.findViewById(R.id.link)
         val dlt: ImageView = itemView.findViewById(R.id.dlt)
+        val share : ImageView = itemView.findViewById(R.id.share)
 
     }
 
@@ -77,6 +78,19 @@ class ProductListAdapter(private val productListArray : MutableList<CardData>, p
         }
 
         holder.dlt.setOnClickListener{deleteItem(position)}
+        holder.share.setOnClickListener {
+
+            val sendIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, "Product On Sale! Buy Now!\n\n" + currentItem.url)
+                type = "text/plain"
+            }
+
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            context.startActivity(shareIntent)
+
+        }
+
     }
 
 

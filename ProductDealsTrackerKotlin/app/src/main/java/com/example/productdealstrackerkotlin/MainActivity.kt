@@ -107,7 +107,7 @@ class MainActivity : AppCompatActivity(), AddProductBottomSheetFragment.BottomSh
                     offerAvail = "No Offers"
                 }
 
-                var imgURL = doc.getElementsByClass("_396cs4 _2amPTt _3qGmMb _3exPp9").attr("srcSet").substringBefore(" 2x").substringBefore("?q=70")
+                var imgURL = doc.getElementsByClass("q6DClP").attr("src").replace("128","832")
                 println(imgURL)
 
                 val newProduct = CardData(
