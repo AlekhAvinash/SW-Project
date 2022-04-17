@@ -1,13 +1,10 @@
 package com.example.productdealstrackerkotlin
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.add_tracking_details_layout.*
 
 class AddProductBottomSheetFragment : BottomSheetDialogFragment(){
@@ -44,7 +41,7 @@ class AddProductBottomSheetFragment : BottomSheetDialogFragment(){
             mListener = context
         }
         else{
-            throw RuntimeException(context!!.toString() + " must implement BottomSheetListener")
+            throw RuntimeException(requireContext().toString() + " must implement BottomSheetListener")
         }
     }
 }
