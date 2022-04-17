@@ -14,11 +14,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.add_tracking_details_layout.view.*
-import java.net.URL
+
 
 
 class ProductListAdapter(private val productListArray : MutableList<CardData>, private val context: Context) : RecyclerView.Adapter<ProductListAdapter.ProductListViewHolder>() {
-
 
     class ProductListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -98,7 +97,15 @@ class ProductListAdapter(private val productListArray : MutableList<CardData>, p
         productListArray.removeAt(index)
         notifyItemRemoved(index)
     }
-
+//    private fun populateDB(): Unit{
+//        val check = db.isExist()
+//        if(check) {
+//            val urlList: MutableList<String> = db.getURL()
+//            for (URL in urlList) {
+//                (URL)
+//            }
+//        }
+//    }
     override fun getItemCount() = productListArray.size
 
 }
