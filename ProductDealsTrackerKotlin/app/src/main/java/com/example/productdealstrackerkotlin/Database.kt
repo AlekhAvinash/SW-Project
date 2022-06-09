@@ -4,21 +4,24 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import java.util.ArrayList
+import java.util.ArrayList as ArrayList
 
 class Database(context: Context, factory: SQLiteDatabase.CursorFactory?) :
-    SQLiteOpenHelper(context, "tracker", factory, 1) {
-
+    SQLiteOpenHelper(context, "tracker", factory, 22) {
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL("DROP TABLE IF EXISTS items")
-        db.execSQL("CREATE TABLE items (link TEXT PRIMARY KEY)")
+        db.execSQL("CREATE TABLE items (link TEXT PRIMARY KEY,budget INTEGER DEFAULT 0)")
     }
     override fun onUpgrade(db: SQLiteDatabase, p1: Int, p2: Int) {
         db.execSQL("DROP TABLE IF EXISTS items")
+//        if (p2 > p1) {
+//            db.execSQL("ALTER TABLE items ADD COLUMN budget INTEGER DEFAULT 0");
+//        }
+
     }
     fun isExist(): Boolean {
-        val db = this.readableDatabase
-        val cursor = db.rawQuery(
+        val dbr = this.readableDatabase
+        val cursor = dbr.rawQuery(
             "select DISTINCT tbl_name from sqlite_master where tbl_name = 'items'",
             null
         )
@@ -30,26 +33,39 @@ class Database(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         return out
     }
 
-    fun addURL(URL: String) {
+    fun addURL(URL: String,budgetValue: Int) {
         val values = ContentValues()
+        val dbw = this.writableDatabase
         values.put("link", URL)
-        val db = this.writableDatabase
-        db.insert("items", null, values)
-        db.close()
+        values.put("budget",budgetValue)
+        dbw.insert("items", null, values)
+        dbw.close()
     }
 
-    fun getURL(): MutableList<String> {
-        val results: MutableList<String> = ArrayList()
-        val db = this.readableDatabase
-        val c = db.rawQuery("SELECT link FROM items", null)
+    fun getURL(): MutableList<Pair<String,Int>> {
+        val results: MutableList<Pair<String,Int>> = ArrayList()
+//        val results: MutableList<String> = ArrayList()
+        val dbr = this.readableDatabase
+        val c = dbr.rawQuery("SELECT link,budget FROM items", null)
+//        val userBudget = dbr.rawQuery("SELECT budget FROM items", null)
         if (c != null) {
             if (c.moveToFirst()) {
                 do {
-                    results.add(c.getString(c.getColumnIndex("link")))
+                    var link = c.getString(c.getColumnIndex("link"))
+//                    results.add(link)
+                    var budget = c.getInt(c.getColumnIndex("budget"))
+
+                    results.add(Pair(link,budget))
+
+
                 } while (c.moveToNext())
             }
         }
         c.close()
         return results
+    }
+    fun delete(URL: String): Boolean{
+        val dbw = this.writableDatabase
+        return dbw.delete("items","link=?", Array<String>(1){URL}) > 0
     }
     }

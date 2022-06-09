@@ -12,13 +12,69 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+<!--        <TextView-->
+<!--            android:id="@+id/introText"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="15dp"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:text="Your Items"-->
+<!--            android:textColor="@color/colorPrimary"-->
+<!--            android:textSize="30dp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="1.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/secondaryIntro"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginRight="30dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Add Products To Track"-->
+<!--            android:textColor="@color/colorPrimary"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/introText" />-->
+
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/searchBarButton"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Title"-->
+<!--            android:drawableLeft="@drawable/ic_baseline_search_24"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textSize="15dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:gravity="left|center_vertical"-->
+<!--            android:paddingLeft="30dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            android:background="@drawable/rounded_corners_button"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/secondaryIntro" />-->
+
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
-            android:padding="4dp"
-            android:clipToPadding="false"
+            android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/card_layout_new"/>
+            android:clipToPadding="false"
+            android:padding="4dp"
+            tools:layout_editor_absoluteY="90dp"
+            tools:listitem="@layout/card_layout_new" />
+
+        <include
+            android:id="@+id/emptyDatabasePrompt"
+            android:visibility="gone"
+            layout="@layout/empty_database_prompt_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_fab"

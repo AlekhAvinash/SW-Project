@@ -25,6 +25,17 @@
         <entry key="..\:/SWE/SW-Project-main/ProductDealsTrackerKotlin/app/src/main/res/layout/cardview_layout.xml" value="0.1" />
         <entry key="..\:/SWE/SW-Project-main/ProductDealsTrackerKotlin/app/src/main/res/layout/nav_header.xml" value="0.11231884057971014" />
         <entry key="..\:/SWE/SW-Project-main/ProductDealsTrackerKotlin/app/src/main/res/menu/nav_menu.xml" value="0.19487179487179487" />
+        <entry key="..\:/Users/ASUS/Desktop/SW-Project-main/ProductDealsTrackerKotlin/app/src/main/res/drawable/bottom_sheet_rounded_corner_shape.xml" value="0.135" />
+        <entry key="..\:/Users/ASUS/Desktop/SW-Project-main/ProductDealsTrackerKotlin/app/src/main/res/drawable/rounded_corners_text_view.xml" value="0.123" />
+        <entry key="..\:/Users/ASUS/Desktop/SW-Project-main/ProductDealsTrackerKotlin/app/src/main/res/font/rubik_medium.xml" value="0.1421875" />
+        <entry key="..\:/Users/ASUS/Desktop/SW-Project-main/ProductDealsTrackerKotlin/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Users/ASUS/Desktop/SW-Project-main/ProductDealsTrackerKotlin/app/src/main/res/layout/add_tracking_details_layout.xml" value="0.2" />
+        <entry key="..\:/Users/ASUS/Desktop/SW-Project-main/ProductDealsTrackerKotlin/app/src/main/res/layout/card_layout_new.xml" value="0.264" />
+        <entry key="..\:/Users/ASUS/Desktop/SW-Project-main/ProductDealsTrackerKotlin/app/src/main/res/layout/cardview_layout.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Desktop/SW-Project-main/ProductDealsTrackerKotlin/app/src/main/res/layout/empty_database_prompt_layout.xml" value="0.136" />
+        <entry key="..\:/Users/ASUS/Desktop/SW-Project-main/ProductDealsTrackerKotlin/app/src/main/res/layout/nav_header.xml" value="0.12447916666666667" />
+        <entry key="..\:/Users/ASUS/Desktop/SW-Project-main/ProductDealsTrackerKotlin/app/src/main/res/layout/network_connection_error_layout.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Desktop/SW-Project-main/ProductDealsTrackerKotlin/app/src/main/res/layout/web_view_browser_layout.xml" value="0.152" />
         <entry key="..\:/Users/ASUS/Desktop/SW-Project/ProductDealsTrackerKotlin/app/src/main/res/layout/activity_main.xml" value="0.12284701114488349" />
         <entry key="..\:/Users/ASUS/Desktop/SW-Project/ProductDealsTrackerKotlin/app/src/main/res/layout/add_tracking_details_layout.xml" value="0.136" />
         <entry key="..\:/Users/ASUS/Desktop/SW-Project/ProductDealsTrackerKotlin/app/src/main/res/layout/card_layout_new.xml" value="0.22826086956521738" />
@@ -32,6 +43,9 @@
         <entry key="..\:/Users/ASUS/Desktop/SW-Project/ProductDealsTrackerKotlin/app/src/main/res/layout/nav_header.xml" value="0.1328125" />
         <entry key="..\:/Users/ASUS/Desktop/SW-Project/ProductDealsTrackerKotlin/app/src/main/res/menu/nav_menu.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/ASUS/Desktop/SW-Project/ProductDealsTrackerKotlin/app/src/main/res/mipmap-anydpi-v26/ic_product_banner.xml" value="0.15" />
+        <entry key="..\:/Users/adity/OneDrive/Desktop/SW-Project-main/ProductDealsTrackerKotlin/app/src/main/res/layout/activity_main.xml" value="0.37083333333333335" />
+        <entry key="..\:/Users/adity/OneDrive/Desktop/SW-Project-main/ProductDealsTrackerKotlin/app/src/main/res/layout/add_tracking_details_layout.xml" value="0.20380434782608695" />
+        <entry key="..\:/Users/adity/OneDrive/Desktop/SW-Project-main/ProductDealsTrackerKotlin/app/src/main/res/layout/card_layout_new.xml" value="0.37083333333333335" />
         <entry key="..\:/Users/adity/OneDrive/Desktop/SW-Project/ProductDealsTrackerKotlin/app/src/main/res/layout/add_tracking_details_layout.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/adity/OneDrive/Desktop/SW-Project/ProductDealsTrackerKotlin/app/src/main/res/layout/card_layout_new.xml" value="0.115625" />
         <entry key="..\:/Users/adity/OneDrive/Pictures/SW-Project/ProductDealsTrackerKotlin/app/src/main/res/layout/add_tracking_details_layout.xml" value="0.22826086956521738" />
