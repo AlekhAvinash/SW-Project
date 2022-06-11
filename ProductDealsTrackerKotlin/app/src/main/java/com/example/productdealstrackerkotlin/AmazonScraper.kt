@@ -20,7 +20,8 @@ object AmazonScraper {
 
         try {
 
-            productPrice = doc.getElementsByClass("a-offscreen").text()
+            var productPriceClass = doc.getElementsByClass("a-price a-text-price a-size-medium apexPriceToPay")
+            productPrice = productPriceClass.select("span.a-offscreen").text()
             offerVal = doc.getElementById("add-to-cart-button").attr("title")
 
             if(offerVal.equals("Add to Shopping Cart"))
@@ -30,10 +31,13 @@ object AmazonScraper {
 
             println(offerVal)
 
-            if (productPrice != "") {
-                productPrice = productPrice.substringBefore(".")
-                println(productPrice.substringAfter("₹").replace(",",""))
+            if (productPrice.isEmpty()) {
+                productPriceClass = doc.getElementsByClass("a-price aok-align-center reinventPricePriceToPayMargin priceToPay")
+                productPrice = productPriceClass.select("span.a-offscreen").text()
             }
+
+            productPrice = productPrice.substringBefore(".")
+            println(productPrice.substringAfter("₹").replace(",",""))
 
         }catch (e: Exception){
 
